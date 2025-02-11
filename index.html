@@ -42,18 +42,19 @@
     <!-- Random GIF container (initially hidden) -->
     <img
       id="randomGif"
-      style="display: none; position: fixed; bottom: 20px; right: 20px; max-width: 150px; border: 2px solid #fff; border-radius: 10px;"
+      style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 300px; border: 2px solid #fff; border-radius: 10px;"
       alt="Random Gif"
     />
 
     <script>
       // Array of GIF URLs – replace these with your actual GIF URLs
       const gifUrls = [
-        "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJ3MzBleml3c3l5dm85dDV3eHh3djkzNms0empobHdrcWo3eGN3NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dEZKOYuY4oQhMOZGEU/giphy.gif",
-        "https://media.giphy.com/media/oy9hVQl8Hq7o8T3tER/giphy.gif",
-        "https://media.giphy.com/media/uWzRXTQRoQzxDO9W0p/giphy.gif",
-        "https://media.giphy.com/media/3og0IG0skAiznZQLde/giphy.gif",
-        "https://media.giphy.com/media/51UwbjGSamlE6T955n/giphy.gif"
+        "assets/gifs/AngryBugcatStickerByCapoo.gif",
+        "assets/gifs/BugcatWhatStickerByCapoo.gif",
+        "assets/gifs/CatNoStickerByCapoo.gif",
+        "assets/gifs/FreezingColdStickerByCapoo.gif",
+        "assets/gifs/SadBugcatStickerByCapoo.gif",
+        "assets/gifs/SadCryGIFByCapoo.gif"
       ];
 
       // Function to move the "No" button and show a random GIF
