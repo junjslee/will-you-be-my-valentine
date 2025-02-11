@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yay! You Said Yes!</title>
+    <!-- Google Fonts for a playful look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/yes_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">Yayyy you said yes!!!! <3</h1>
+      <div class="gif_container">
+        <!-- Display a celebration GIF (using a URL; replace with a local file if desired) -->
+        <img src="https://media.giphy.com/media/fngeQvy995JpJhoMgz/giphy.gif" alt="Celebration GIF">
+      </div>
+      <!-- Background music that auto-plays and loops -->
+      <audio id="backgroundMusic" src="assets/audio/love.mp3" autoplay loop></audio>
+    </div>
+    <script>
+      // Optional: Add a confetti effect on page load
+      window.onload = function () {
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+      };
+    </script>
+  </body>
+</html>

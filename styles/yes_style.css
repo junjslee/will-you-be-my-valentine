@@ -1,0 +1,49 @@
+/* yes_style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background: url("assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container with a gentle white overlay */
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling with extra flair */
+.header_text {
+  font-family: "Sacramento", cursive;
+  font-size: 52px;
+  margin-bottom: 20px;
+  color: #e91e63;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* GIF container styling */
+.gif_container {
+  text-align: center;
+}
+
+.gif_container img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .header_text {
+    font-size: 40px;
+  }
+}

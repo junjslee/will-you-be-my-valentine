@@ -1,0 +1,77 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background: url("assets/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Semi-transparent container for better text readability */
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling with a romantic font and text-shadow */
+.header_text {
+  font-family: "Sacramento", cursive;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #e91e63;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive image container */
+.image_container {
+  text-align: center;
+}
+
+.image_container img {
+  width: 40%; /* Limits the image to 40% of the container/screen width */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Buttons container */
+.buttons {
+  margin-top: 20px;
+}
+
+/* Button styling with smooth transitions */
+.btn {
+  background-color: #ffb6c1;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff69b4;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .header_text {
+    font-size: 36px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}

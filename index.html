@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Be My Valentine?</title>
+    <!-- Google Fonts for a playful look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Include canvas-confetti for confetti animation -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+      /* Bounce animation for the Yes button */
+      @keyframes bounce {
+        0% { transform: scale(1); }
+        30% { transform: scale(1.2); }
+        50% { transform: scale(0.9); }
+        70% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      .btn.clicked {
+        animation: bounce 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">Will You Be My Valentine?</h1>
+      <div class="image_container">
+        <!-- Replace with your selected romantic photo -->
+        <img src="assets/images/romantic-photo.jpg" alt="Romantic Background">
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="goToYesPage()">Yes!</button>
+        <button class="btn" id="noButton" onmouseover="evadeButton()" onclick="evadeButton()">No</button>
+      </div>
+    </div>
+
+    <!-- Random GIF container (initially hidden) -->
+    <img
+      id="randomGif"
+      style="display: none; position: fixed; bottom: 20px; right: 20px; max-width: 150px; border: 2px solid #fff; border-radius: 10px;"
+      alt="Random Gif"
+    />
+
+    <script>
+      // Array of GIF URLs – replace these with your actual GIF URLs
+      const gifUrls = [
+        "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJ3MzBleml3c3l5dm85dDV3eHh3djkzNms0empobHdrcWo3eGN3NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dEZKOYuY4oQhMOZGEU/giphy.gif",
+        "https://media.giphy.com/media/oy9hVQl8Hq7o8T3tER/giphy.gif",
+        "https://media.giphy.com/media/uWzRXTQRoQzxDO9W0p/giphy.gif",
+        "https://media.giphy.com/media/3og0IG0skAiznZQLde/giphy.gif",
+        "https://media.giphy.com/media/51UwbjGSamlE6T955n/giphy.gif"
+      ];
+
+      // Function to move the "No" button and show a random GIF
+      function evadeButton() {
+        const noBtn = document.getElementById("noButton");
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+        const maxX = window.innerWidth - btnWidth;
+        const maxY = window.innerHeight - btnHeight;
+        const randomX = Math.random() * maxX;
+        const randomY = Math.random() * maxY;
+        noBtn.style.position = "absolute";
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+
+        // Pick and display a random GIF
+        const randomIndex = Math.floor(Math.random() * gifUrls.length);
+        const selectedGif = gifUrls[randomIndex];
+        const gifDisplay = document.getElementById("randomGif");
+        gifDisplay.src = selectedGif;
+        gifDisplay.style.display = "block";
+        gifDisplay.style.opacity = 0;
+        gifDisplay.style.transition = "opacity 0.5s";
+        setTimeout(() => {
+          gifDisplay.style.opacity = 1;
+        }, 50);
+
+        // Hide the GIF after 3 seconds (optional)
+        setTimeout(() => {
+          gifDisplay.style.display = "none";
+        }, 3000);
+      }
+
+      // Function to animate the Yes button and navigate to the next page
+      function goToYesPage() {
+        const yesBtn = document.getElementById("yesButton");
+        yesBtn.classList.add("clicked");
+
+        // Trigger confetti explosion
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+
+        // Wait for the animation and confetti effect before redirecting
+        setTimeout(() => {
+          window.location.href = "yes.html";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
