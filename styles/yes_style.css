@@ -1,5 +1,3 @@
-/* yes_style.css */
-
 body {
   margin: 0;
   padding: 0;
@@ -19,6 +17,7 @@ body {
   padding: 40px;
   text-align: center;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  width: 60%;
 }
 
 /* Header styling with extra flair */
@@ -41,9 +40,27 @@ body {
   margin-top: 20px;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Media Query for Tablets and Smaller Screens */
 @media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 30px;
+  }
   .header_text {
     font-size: 40px;
+  }
+}
+
+/* Additional Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  .header_text {
+    font-size: 36px;
+  }
+  .gif_container img {
+    width: 80%;
   }
 }
